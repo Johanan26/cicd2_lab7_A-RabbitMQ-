@@ -9,7 +9,7 @@ app = FastAPI()
 RABBIT_URL = os.getenv("RABBIT_URL")
 
 @app.post("/order")
-async def publish_order(order:dist):
+async def publish_order(order:dict):
     """
     Receives an order as Json and publishes it to a RabbitMQ queue.
     """
